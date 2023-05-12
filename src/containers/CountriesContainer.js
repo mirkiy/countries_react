@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import CountryList from "../components/CountryList";
 
 const CountriesContainer = () => {
   const [countries, setCountries] = useState([]);
@@ -15,14 +16,16 @@ const CountriesContainer = () => {
 
   console.log(countries);
 
-  const countryList = countries.map((country) => {
-    return <li>{country.name.common}</li>;
-  });
+  // const countryList = countries.map((country) => {
+  //   return <li>{country.name.common}</li>;
+  // });
 
   return (
     <>
       <h1>Countries Container</h1>
-      <ul>{countryList}</ul>
+     
+     <CountryList countries={countries}/>
+      {/* <ul>{countryList}</ul> */}
     </>
   );
 };
