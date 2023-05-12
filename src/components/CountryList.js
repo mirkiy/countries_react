@@ -1,16 +1,24 @@
 import React from "react";
 
-const CountryList = ({ countries }) => {
-  const countryList = countries.map((country) => {
-    return (
-      <>
-        <li>{country.name.official} (population: {country.population})</li>
-        <h5>capital city: {country.capital}</h5>
-      </>
-    );
-  });
+const CountryList = ({ countries, onCountrySelected }) => {
+  const handleChange = (event) => {
+    onCountrySelected(event.target.value);
+  };
 
-  return <ul>{countryList}</ul>;
+  return (
+    <select defaultValue="" onChange={handleChange}>
+      <option value="" disabled>
+        Choose a country{" "}
+      </option>
+      {countries.map((country) => {
+        return (
+          <option key={country.cca3} value={country.cca3}>
+            {country.name.official}
+          </option>
+        );
+      })}
+    </select>
+  );
 };
 
 export default CountryList;

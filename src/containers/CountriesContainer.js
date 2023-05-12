@@ -3,6 +3,7 @@ import CountryList from "../components/CountryList";
 
 const CountriesContainer = () => {
   const [countries, setCountries] = useState([]);
+  const [selectedCountryCCA3Code, setSelectedCountryCCA3Code] = useState("");
 
   useEffect(() => {
     getCountries();
@@ -16,16 +17,16 @@ const CountriesContainer = () => {
 
   console.log(countries);
 
-  // const countryList = countries.map((country) => {
-  //   return <li>{country.name.common}</li>;
-  // });
+  const handleCountrySelected = cca3 => {
+    selectedCountryCCA3Code(cca3)
+  }
+
 
   return (
     <>
       <h1>Countries Container</h1>
-     
-     <CountryList countries={countries}/>
-      {/* <ul>{countryList}</ul> */}
+
+      <CountryList countries={countries} onCountrySelected={handleCountrySelected}/>
     </>
   );
 };
