@@ -22,18 +22,23 @@ const CountriesContainer = () => {
     setSelectedCountryCCA3Code(cca3);
   };
 
+  const totalPopulation = countries.reduce((total, country) => {
+    return total + country.population;
+  }, 0);
 
-  const selectedCountry = countries.find(country => country.cca3 === selectedCountryCCA3Code)
+  const selectedCountry = countries.find(
+    (country) => country.cca3 === selectedCountryCCA3Code
+  );
 
   return (
     <>
       <h1>Countries Container</h1>
-
+      <p>Total population: {totalPopulation}</p>
       <CountryList
         countries={countries}
         onCountrySelected={handleCountrySelected}
       />
-      <Country country={selectedCountry}/>
+      <Country country={selectedCountry} />
     </>
   );
 };
