@@ -30,6 +30,15 @@ const CountriesContainer = () => {
     (country) => country.cca3 === selectedCountryCCA3Code
   );
 
+  const handleFavouriteToggle = (cca3) => {
+    const updatedCountry = countries.map((country) => {
+      if (country.cca3 === cca3) {
+        country.favourite = !country.favourite;
+      }
+      return country;
+    });
+    setCountries(updatedCountry);
+  };
   return (
     <>
       <h1>Countries Container</h1>
@@ -38,7 +47,10 @@ const CountriesContainer = () => {
         countries={countries}
         onCountrySelected={handleCountrySelected}
       />
-      <Country country={selectedCountry} />
+      <Country
+        country={selectedCountry}
+        onFavouriteToggle={handleFavouriteToggle}
+      />
     </>
   );
 };
