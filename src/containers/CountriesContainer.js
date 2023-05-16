@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Country from "../components/Country";
 import CountryList from "../components/CountryList";
+import FavouriteCountries from "../components/FavouriteCountries";
 
 const CountriesContainer = () => {
   const [countries, setCountries] = useState([]);
@@ -50,6 +51,10 @@ const CountriesContainer = () => {
       <Country
         country={selectedCountry}
         onFavouriteToggle={handleFavouriteToggle}
+      />
+      <FavouriteCountries
+        countries={countries}
+        onCountrySelected={handleCountrySelected}
       />
     </>
   );
