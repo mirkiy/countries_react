@@ -41,7 +41,7 @@ const CountriesContainer = () => {
     setCountries(updatedCountry);
   };
   return (
-    <>
+    <div>
       <h1>Countries Container</h1>
       <p>Total population: {totalPopulation}</p>
       <CountryList
@@ -56,7 +56,7 @@ const CountriesContainer = () => {
         countries={countries}
         onCountrySelected={handleCountrySelected}
       />
-    </>
+    </div>
   );
 };
 export default CountriesContainer;

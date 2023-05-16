@@ -2,4 +2,38 @@
   text-align: center;
 }
 
+div {
+  margin: auto;
+  width: 80%;
+  background-color: rgb(240, 230, 218);
+  border-radius: 10px;
+  padding: 5px;
+  color: rgb(99, 71, 30);
+}
+ul {
+  list-style: none;
+}
+li {
+  font-weight: 700;
+  padding-bottom: 12px;
+}
+li:hover {
+  background-color: blanchedalmond;
+  cursor: pointer;
+}
 
+.selectionDiv {
+  position: relative;
+  display: inline-block;
+}
+
+.favBtn {
+  background-color: rgb(233, 203, 148);
+  border-style: none;
+  padding: 10px;
+  border-radius: 3px;
+}
+.favBtn:hover {
+  cursor: pointer;
+  background-color: blanchedalmond;
+}

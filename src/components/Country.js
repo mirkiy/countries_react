@@ -14,10 +14,10 @@ const favouriteBtnText = country.favourite ? "Remove from favourite" : "Add to f
 return (
     <>
     <h3>Name: {country.name.official}</h3>
-    <img source={country.flags.png} alt={`Flag of ${country.name.official}`}></img>
+    <img src={country.flags.png} alt={`Flag of ${country.name.official}`}></img>
    <h4>Capital city: {country.capital}</h4>
    <h4>Population: {country.population}</h4>
-   <button onClick={handleClick}>{favouriteBtnText}</button>
+   <button className="favBtn" onClick={handleClick}>{favouriteBtnText}</button>
     </>
 )
 }

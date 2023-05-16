@@ -6,6 +6,7 @@ const CountryList = ({ countries, onCountrySelected }) => {
   };
 
   return (
+    <div className="selectionDiv">
     <select defaultValue="" onChange={handleChange}>
       <option value="" disabled>
         Choose a country{" "}
@@ -18,6 +19,7 @@ const CountryList = ({ countries, onCountrySelected }) => {
         );
       })}
     </select>
+    </div>
   );
 };
 
