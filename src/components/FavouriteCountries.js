@@ -4,7 +4,7 @@ const FavouriteCountries = ({ countries, onCountrySelected }) => {
   const favouriteCountries = countries.filter((country) => country.favourite);
 
   return (
-    <>
+    <div className="favouriteCountries">
       <h3>Favourite Countries:</h3>
       <ul>
         {favouriteCountries.map((country) => {
@@ -24,7 +24,7 @@ const FavouriteCountries = ({ countries, onCountrySelected }) => {
           );
         })}
       </ul>
-    </>
+    </div>
   );
 };
 export default FavouriteCountries;
