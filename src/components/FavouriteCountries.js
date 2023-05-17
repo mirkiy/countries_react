@@ -9,17 +9,14 @@ const FavouriteCountries = ({ countries, onCountrySelected }) => {
       <ul>
         {favouriteCountries.map((country) => {
           return (
-            <li key={country.cca3}  onClick={() => {
-                  onCountrySelected(country.cca3);
-                }}>
-              {/* <button className="favCountry"
-                onClick={() => {
-                  onCountrySelected(country.cca3);
-                }}
-              > */}
-                {" "}
-                {country.name.official}
-              {/* </button> */}
+            <li
+              key={country.cca3}
+              onClick={() => {
+                onCountrySelected(country.cca3);
+              }}
+            >
+              {" "}
+              {country.name.official}
             </li>
           );
         })}

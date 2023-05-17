@@ -27,6 +27,13 @@ const CountriesContainer = () => {
     return total + country.population;
   }, 0);
 
+  const addSpacesToNumber = (number) => {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  };
+
+  const formattedTotalPopulation = addSpacesToNumber(totalPopulation);
+
+
   const selectedCountry = countries.find(
     (country) => country.cca3 === selectedCountryCCA3Code
   );
@@ -40,11 +47,15 @@ const CountriesContainer = () => {
     });
     setCountries(updatedCountry);
   };
+
+
+
+
   return (
     <div className="mainContainer">
     <div className="heading">
       <h1>Countries Container</h1>
-      <p>Total population: {totalPopulation}</p>
+      <p>Total population: {formattedTotalPopulation}</p>
       </div>
       <CountryList
         countries={countries}
@@ -53,6 +64,7 @@ const CountriesContainer = () => {
       <Country
         country={selectedCountry}
         onFavouriteToggle={handleFavouriteToggle}
+        addSpacesToNumber = {addSpacesToNumber}
       />
       <FavouriteCountries
         countries={countries}
